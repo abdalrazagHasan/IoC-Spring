@@ -1,9 +1,9 @@
 package com.bambino.IoC.controllers;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
+@Primary
 @Component
-@Qualifier("anotherController")
 public class AnotherController implements ControllerOperations {
 
     public void greeting(){

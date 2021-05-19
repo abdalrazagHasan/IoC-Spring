@@ -13,16 +13,19 @@ public class ManagerControllerOperations {
 
     private final List<ControllerOperations> controllersOperations;
 
+    private final ControllerOperations controllerOperations;
+
     @Autowired
-    public ManagerControllerOperations(List<ControllerOperations> controllersOperations){
+    public ManagerControllerOperations(List<ControllerOperations> controllersOperations,ControllerOperations controllerOperations){
         this.controllersOperations = controllersOperations;
+        this.controllerOperations = controllerOperations;
     }
 
-    public void greeting(){
-        controllersOperations.forEach(System.out::println);
+    public void greetingUsingPrimary(){
+        controllerOperations.greeting();
     }
 
-        public void greeting(Class type){
+    public void greeting(Class type){
         for (ControllerOperations instance : controllersOperations){
             if (instance.toString().equals(type.getSimpleName())){
                 instance.greeting();
@@ -31,6 +34,7 @@ public class ManagerControllerOperations {
         }
         System.out.println("there is no such this type");
     }
+
 
 
 }
