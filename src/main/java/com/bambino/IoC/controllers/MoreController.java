@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile("Mo")
+@Profile({"Mo","default"})
 public class MoreController implements ControllerOperations {
 
     private int id;
