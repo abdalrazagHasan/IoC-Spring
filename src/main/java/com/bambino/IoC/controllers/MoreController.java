@@ -1,12 +1,15 @@
 package com.bambino.IoC.controllers;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
 @Profile({"Mo","default"})
-public class MoreController implements ControllerOperations {
+public class MoreController implements ControllerOperations , InitializingBean, DisposableBean {
 
     private int id;
 
@@ -18,5 +21,14 @@ public class MoreController implements ControllerOperations {
     @Override
     public String toString() {
         return MoreController.class.getSimpleName();
+    }
+
+
+    public void destroy() throws Exception {
+        System.out.println("destroyed");
+    }
+
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("init");
     }
 }

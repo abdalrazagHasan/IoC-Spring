@@ -5,6 +5,7 @@ import com.bambino.IoC.controllers.MoreController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 @SpringBootApplication
 public class IocApplication {
@@ -14,6 +15,7 @@ public class IocApplication {
 
         ManagerControllerOperations manager = context.getBean(ManagerControllerOperations.class);
         manager.greetingUsingPrimary();
+
     }
 
 }
