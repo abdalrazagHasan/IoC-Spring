@@ -1,10 +1,11 @@
 package com.bambino.IoC.controllers;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("moreController")
+@Profile("Mo")
 public class MoreController implements ControllerOperations {
 
     private int id;

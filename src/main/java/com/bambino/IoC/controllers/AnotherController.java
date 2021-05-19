@@ -1,8 +1,9 @@
 package com.bambino.IoC.controllers;
 
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
-@Primary
+@Profile("An")
 @Component
 public class AnotherController implements ControllerOperations {
 
