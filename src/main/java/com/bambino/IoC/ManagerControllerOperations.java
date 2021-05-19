@@ -22,9 +22,9 @@ public class ManagerControllerOperations {
         controllersOperations.forEach(System.out::println);
     }
 
-    public void greeting(String type){
+        public void greeting(Class type){
         for (ControllerOperations instance : controllersOperations){
-            if (instance.toString().equals(type)){
+            if (instance.toString().equals(type.getSimpleName())){
                 instance.greeting();
                 return;
             }

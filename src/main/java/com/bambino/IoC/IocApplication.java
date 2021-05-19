@@ -12,7 +12,7 @@ public class IocApplication {
         ApplicationContext context = SpringApplication.run(IocApplication.class, args);
 
         ManagerControllerOperations manager = context.getBean(ManagerControllerOperations.class);
-        manager.greeting(MoreController.class.getSimpleName());
+        manager.greeting(MoreController.class);
     }
 
 }
