@@ -7,8 +7,11 @@ import org.springframework.stereotype.Component;
 @Qualifier("moreController")
 public class MoreController implements ControllerOperations {
 
+    private int id;
+
     public void greeting(){
-        System.out.println(MoreController.class.getSimpleName());
+        System.out.println(id+MoreController.class.getSimpleName());
+        id+=2;
     }
 
     @Override
