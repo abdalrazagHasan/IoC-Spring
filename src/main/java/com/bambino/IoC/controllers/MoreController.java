@@ -2,11 +2,12 @@ package com.bambino.IoC.controllers;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+
 @Component
-@Qualifier("anotherController")
-public class AnotherController implements ControllerOperations {
+@Qualifier("moreController")
+public class MoreController implements ControllerOperations {
 
     public void greeting(){
-        System.out.println(AnotherController.class.getSimpleName());
+        System.out.println(MoreController.class.getSimpleName());
     }
 }
