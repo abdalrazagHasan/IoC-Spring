@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-@PropertySource("classpath:datasource.properties")
 public class IocApplication {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(IocApplication.class,args);
@@ -17,9 +16,7 @@ public class IocApplication {
         FakeDatasource fakeDatasource
                 = context.getBean(FakeDatasource.class);
 
-        System.out.println(fakeDatasource.getUsername());
-        System.out.println(fakeDatasource.getPassword());
-        System.out.println(fakeDatasource.getUrl());
+        System.out.println(fakeDatasource);
 
     }
 }
