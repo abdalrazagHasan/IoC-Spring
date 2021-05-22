@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 @Configuration
-@PropertySource("classpath:datasource.properties")
+@PropertySource({"classpath:datasource.properties","classpath:jms.properties"})
 public class ConfigDatasource {
 
     private final Environment env;
@@ -20,12 +20,15 @@ public class ConfigDatasource {
     }
 
 
-    @Value("${username}")
+    @Value("${DATABASE_USERNAME}")
     private String username;
-    @Value("${password}")
+    @Value("${DATABASE_PASSWORD}")
     private String password;
-    @Value("${url}")
+    @Value("${DATABASE_URL}")
     private String url;
+
+    @Value("${JMS_WHATEVER}")
+    private String jmsWhatever;
 
 
 
@@ -36,6 +39,7 @@ public class ConfigDatasource {
         fakeDatasource.setPassword(password);
         fakeDatasource.setUrl(url);
         fakeDatasource.setOperatingEnvironment(env.getProperty("DESKTOP_SESSION"));
+        fakeDatasource.setJmsId(jmsWhatever);
         return fakeDatasource;
     }
 

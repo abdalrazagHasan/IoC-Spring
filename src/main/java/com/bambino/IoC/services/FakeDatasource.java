@@ -6,6 +6,15 @@ public class FakeDatasource {
     private String password;
     private String url;
     private String OperatingEnvironment;
+    private String jmsId;
+
+    public String getJmsId() {
+        return jmsId;
+    }
+
+    public void setJmsId(String jmsId) {
+        this.jmsId = jmsId;
+    }
 
     public FakeDatasource() {
     }
@@ -49,6 +58,7 @@ public class FakeDatasource {
                 ", password='" + password + '\'' +
                 ", url='" + url + '\'' +
                 ", OperatingEnvironment='" + OperatingEnvironment + '\'' +
+                ", jms_id ='" + jmsId + '\'' +
                 '}';
     }
 }
