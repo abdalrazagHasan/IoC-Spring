@@ -10,10 +10,13 @@ public class IocApplication {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(IocApplication.class,args);
 
+        ConfigDatasource configDatasource = context.getBean(ConfigDatasource.class);
+
         FakeDatasource fakeDatasource
                 = context.getBean(FakeDatasource.class);
 
         System.out.println(fakeDatasource);
+        System.out.println(configDatasource.getWelcome());
 
     }
 }

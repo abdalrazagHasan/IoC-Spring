@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "welcome",
+      "type": "java.lang.String",
+      "description": "Description for welcome."
+  }
+] }

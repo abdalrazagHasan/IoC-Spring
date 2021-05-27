@@ -3,10 +3,7 @@ package com.bambino.IoC;
 import com.bambino.IoC.services.FakeDatasource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
+import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 
 @Configuration
@@ -34,7 +31,12 @@ public class ConfigDatasource {
     @Value("${JMS_WHATEVER}")
     private String jmsWhatever;
 
+    @Value("${welcome}")
+    private String welcome;
 
+    public String getWelcome() {
+        return welcome;
+    }
 
     @Bean
     public FakeDatasource fakeDatasource(){
