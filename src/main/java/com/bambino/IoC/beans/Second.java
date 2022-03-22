@@ -11,18 +11,15 @@ import static org.springframework.beans.factory.config.BeanDefinition.SCOPE_SING
 @Scope(value = SCOPE_SINGLETON)
 public class Second {
 
-    private final Proxy proxy;
+    private First first;
 
-    public Second(Proxy proxy){
-        this.proxy = proxy;
-    }
 
     public First getFirst() {
-        return proxy.getFirst();
+        return first;
     }
 
     public void setFirst(First first) {
-        this.proxy.setFirst(first);
+        this.first = first;
     }
 
     public void print(){
@@ -32,7 +29,7 @@ public class Second {
     @Override
     public String toString() {
         return "Second{" +
-                "first=" + proxy.getFirst() +
+                "first=" + first +
                 '}';
     }
 }

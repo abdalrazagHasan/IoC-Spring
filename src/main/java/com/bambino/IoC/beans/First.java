@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import static org.springframework.beans.factory.config.BeanDefinition.SCOPE_PROTOTYPE;
 
 @Service
-@Scope(value = SCOPE_PROTOTYPE)
+@Scope(value = SCOPE_PROTOTYPE,proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class First {
 
     private String name;
