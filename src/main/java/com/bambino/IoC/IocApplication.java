@@ -1,6 +1,7 @@
 package com.bambino.IoC;
 
-import com.bambino.IoC.services.FakeDatasource;
+import com.bambino.IoC.beans.First;
+import com.bambino.IoC.beans.Second;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -10,13 +11,12 @@ public class IocApplication {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(IocApplication.class,args);
 
-        ConfigDatasource configDatasource = context.getBean(ConfigDatasource.class);
-
-        FakeDatasource fakeDatasource
-                = context.getBean(FakeDatasource.class);
-
-        System.out.println(fakeDatasource);
-        System.out.println(configDatasource.getWelcome());
-
+        First first = context.getBean(First.class);
+        Second second = context.getBean(Second.class);
+        first.setName("hello");
+        second.setFirst(first);
+        second.getFirst().print();
+        Second bean = context.getBean(Second.class);
+        bean.getFirst().print();
     }
 }
